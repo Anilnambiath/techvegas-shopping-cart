@@ -1,0 +1,38 @@
+<div class="header">
+    <div class="logo">
+      <img src="../../assets/image/impro.avif" alt="Logo" />
+    </div>
+  
+    <div class="search-home">
+      <input
+        type="text"
+        class="form-control my-3"
+        placeholder="Search for products"
+        [(ngModel)]="searchTerm"
+        (keyup)="onSearch()"
+      />
+    </div>
+  
+    <div class="cart-profile">
+      <div id="cart">
+        <a routerLink="cart" class="cart-icon">
+          <i class="bi bi-cart4"></i>
+          <span *ngIf="cartCount > 0" class="cart-badge">{{ cartCount }}</span>
+        </a>
+      </div>
+  
+      <div class="profile-dropdown" (mouseover)="showDropdown=true" (mouseleave)="showDropdown=false">
+        <a routerLink="profile" class="icon">
+          <i class="bi bi-person-circle"></i>
+        </a>
+        <div *ngIf="showDropdown" class="dropdown-menu">
+          <ul>
+            <li><a routerLink="profile">My Profile</a></li>
+            <li><a routerLink="settings">Settings</a></li>
+            <li><a (click)="signOut()">Sign Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  

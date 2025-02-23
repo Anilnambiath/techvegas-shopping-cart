@@ -1,0 +1,9 @@
+.product-image {
+    width: 400px;  
+    height: auto; 
+    object-fit: contain; 
+    padding: 10px; 
+    background-color: #fff; 
+    display: block;
+    margin: auto;
+  }

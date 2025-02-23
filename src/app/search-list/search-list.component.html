@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Search Results for "{{ searchTerm }}"</h1>
+  
+    <div *ngIf="products.length > 0; else noResults">
+      <div class="row">
+        <div class="col-md-3" *ngFor="let product of products">
+          <div class="card p-3 my-2">
+            <img [src]="product.image" alt="Product Image" class="img-fluid product-image" />
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.description | slice:0:50 }}...</p>
+            <h4>{{ product.price | currency }}</h4>
+            <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <ng-template #noResults>
+      <p>No products found for "{{ searchTerm }}"</p>
+    </ng-template>
+  </div>
+  

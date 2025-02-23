@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Cart</h1>
+
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+    <div class="row">
+      <div class="col-6 col-sm-4 col-md-3" *ngFor="let item of cartItems">
+        <div class="card">
+          <img [src]="item.image" alt="Product Image" class="img-fluid product-image" />
+          <h3>{{ item.title }}</h3>
+          <h4>{{ item.price | currency }}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #emptyCart>
+    <p>Your cart is empty.</p>
+  </ng-template>
+</div>
